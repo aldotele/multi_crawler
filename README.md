@@ -1,6 +1,7 @@
 # Etsy.com web crawler
 
-This program allows you automatically download product images from etsy.com.
+This program allows you to automatically download product images from 
+**[etsy.com](https://eff.org)**
 
 Download can be boosted by choosing *multithread* mode instead of *sequential*.
 
