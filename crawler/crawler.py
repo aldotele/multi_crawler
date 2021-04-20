@@ -22,7 +22,6 @@ class EtsyCrawler(HTMLParser):
 class ImgDownloader():
 
     def download_images(links, name, date=custom_datetime()):
-   
         i = 1
         query_path = os.path.join(IMAGES_DIR, name, date)
         os.makedirs(query_path)
@@ -34,7 +33,7 @@ class ImgDownloader():
             file.write(response.content)
             file.close()
             i += 1
-            
+
 
 def parse_and_download(query):
     final_url = STARTING_URL + query
