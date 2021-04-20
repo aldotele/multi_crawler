@@ -1,4 +1,4 @@
-def ask_mode():  # sequential or multithread
+def ask_mode():  # sequential or multi-thread
     print('how do you want to run?\n1 - Sequential\n2 - Multithread')
     mode = input('Enter choice: ')
     while mode != '1' and mode != '2':
@@ -17,5 +17,4 @@ def ask_products():
         if len(queries) > 7:  # max 8 queries allowed
             break
         query = input('other products? (leave blank to end): ')
-    
-    return queries 
+    return queries

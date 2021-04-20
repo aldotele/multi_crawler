@@ -14,17 +14,17 @@ class EtsyCrawler(HTMLParser):
 
     def handle_startendtag(self, tag, attrs):
         if tag == 'img':
-            attrs = dict(attrs)
+            attrs = dict(attrs)  # key is the tag attribute and value is its value
             if 'src' in attrs:
                 self.links.append(attrs['src'])
 
 
-class ImgDownloader():
-
+class ImgDownloader:
+    @staticmethod
     def download_images(links, name, date=custom_datetime()):
         i = 1
         query_path = os.path.join(IMAGES_DIR, name, date)
-        os.makedirs(query_path)
+        os.makedirs(query_path)  # creating a folder for each query with sub-folder for each datetime
         for link in links:
             response = requests.get(link)
             image_name = f"{name}_{i}.png"
@@ -43,7 +43,7 @@ def parse_and_download(query):
         html_bytes = page.read()
         html = html_bytes.decode("utf-8")
     except:
-        print('product not found in Etsy!')
+        print('product not found on Etsy!')
         quit()
 
     parser = EtsyCrawler()
