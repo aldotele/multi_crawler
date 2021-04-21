@@ -47,6 +47,6 @@ def parse_and_download(query):
         quit()
 
     parser = EtsyCrawler()
-    EtsyCrawler.links = []
+    parser.links = []
     parser.feed(html)
     ImgDownloader.download_images(parser.links, query)
