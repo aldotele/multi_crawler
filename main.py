@@ -8,6 +8,7 @@ def main():
     print('Welcome!\nEnter below the product images you want to download from Etsy.com')
     print()
     queries = ask_products()
+    print()
     mode = ask_mode()  # mode can be either sequential or multi-thread
 
     starting_time = time.time()
