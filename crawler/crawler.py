@@ -10,7 +10,9 @@ STARTING_URL = 'https://www.etsy.com/it/search?q='
 
 
 class EtsyCrawler(HTMLParser):
-    links = []
+    def __init__(self, *, convert_charrefs=True):
+        super(EtsyCrawler, self).__init__()
+        self.links = []
 
     def handle_startendtag(self, tag, attrs):
         if tag == 'img':
@@ -47,6 +49,5 @@ def parse_and_download(query):
         quit()
 
     parser = EtsyCrawler()
-    parser.links = []
     parser.feed(html)
     ImgDownloader.download_images(parser.links, query)
